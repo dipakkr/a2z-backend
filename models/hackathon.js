@@ -39,6 +39,6 @@ const HackathonSchema = new Schema({
 })
 
 const HackathonModel = mongoose.model('hackathon', HackathonSchema);
-module.export = HackathonModel;
+module.exports = HackathonModel;
 
 

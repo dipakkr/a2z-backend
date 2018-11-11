@@ -11,12 +11,7 @@ const TopCharts = require('../models/topcharts');
 //CODING RESOURCES
 
 //  POST /coding
-router.post('/coding',(req, res, next) => {
-    const { title, url, diffcultyLevel, tags } = req.body
-    CodingResources.create({title, url, diffcultyLevel, tags})
-    .then((coding) => res.send(coding))
-    .catch(next);
-});
+
 
 //  GET - /coding
 router.get('/coding',(req, res, next)=>{
@@ -43,7 +38,6 @@ router.get('/conference', (req, res,next)=>{
         if(e) return res.status(404).send(e);
     });
 });
-
 
 // POST - /hackathon
 router.post('/hackathon', (req, res, next) => {

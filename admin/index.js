@@ -5,28 +5,53 @@
  */
 const express = require('express');
 const router = express.Router();
+const CodingResources = require('../models/coding');
+const HackathonModel = require('../models/hackathon');
 
-router.get('/a2zhq',(req, res, next)=>{
-    // res.sendFile('index.html', {root: './admin/public'});
-    // next();
+//Home Page
+router.get('/a2zhq?',(req, res, next)=>{
     res.render('index');
 });
 
-
 router.post('/a2zhq', (req, res)=>{
-    
     var username = req.body.username;
     var password = req.body.password;
 
     if(username,password != null && username === 'admin@a2zhq' && password === 'admin'){
-        //login sucsess
+        //login success
         res.render('dashboard');
     }
 });
 
-router.post('/dashboard', (req, res, next) => {
-   console.log(req.body.difficulty);
-   console.log(req.body.tag);
+
+
+router.post('/dashboard/:name', (req, res, next) => {
+    var name = req.params.name;
+    if(name === "coding"){
+        const { 
+            title, 
+            url, 
+            diffcultyLevel, 
+            tag 
+        } = req.body;
+    
+        CodingResources.create({title, url, diffcultyLevel, tag})
+        .then((coding) => res.send(coding));
+    }else if(name === "hackathon"){
+        const { 
+            title, 
+            url, 
+            location,
+            date,
+            type,
+            travelReimbursment
+        } = req.body;
+    
+        HackathonModel.create({ title, url, location, date, type, travelReimbursment})
+        .then((hackathon) =>res.send(hackathon))
+        .catch(next);
+    }
+    
 });
 
 router.get('/test', (req, res)=>{

@@ -14,7 +14,7 @@ const CodingSchema = new Schema({
         type : String,
         required : true
     },
-    tags: {
+    tag: {
         type: String,
         // enum: [
         //     'Python',
