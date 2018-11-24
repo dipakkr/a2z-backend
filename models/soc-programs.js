@@ -6,31 +6,27 @@ const OpenSourceProgramSchema = new Schema({
         type : String, 
         required : true
     },
-
     url : {
         type :String, 
         required : true
     },
-
-    catergory :{
-        type : String, 
-        required : true,
-        enum : [
-            "Summer of Code Programs", 
-            "Open Source Competitions"
-        ]
-    },
-
-    stipend : {
+    incentives : {
+        /* Example
+              - Prizes for winners
+              - Stipend Available
+        */
         type : String,
         required : true
     },
-    
-    isOnline : {
+    bookmark : {
+        type: Boolean, 
+        default :false
+    },
+    active : {
         type : Boolean,
         default : true
     }
 });
 
-const OpenSourcePrograms = mongoose.model('soc', OpenSourceProgramSchema);
-module.exports = OpenSourcePrograms;
+const OpenSourceProgramsModel = mongoose.model('soc', OpenSourceProgramSchema);
+module.exports = OpenSourceProgramsModel;

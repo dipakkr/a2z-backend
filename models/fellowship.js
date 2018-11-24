@@ -24,7 +24,7 @@ const FellowshipSchema = new Schema({
         type:String,
         required : true
     },
-    date :{
+    deadline :{
         type: Date
     },
     active :{

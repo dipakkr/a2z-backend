@@ -34,6 +34,8 @@
     <!-- 5. Top Charts -->
     <li><a href="#topcharts">Top Charts</a></li>
 
+    <li><a href="#open-source-programs"> OS Programs </a></li>
+
   </ul>
 
   <div class="tab-content">
@@ -43,7 +45,8 @@
     <div id="coding" class="tab-pane fade">
       <h3>Add Coding Resources</h3>
 
-      <form method="POST" action="/admin/dashboard/coding">
+      <form name="form" method="POST" action="/admin/dashboard/coding">
+
         <div id="form-container">
           <div class="form-group">
             <label for="inputsm">Title</label>
@@ -82,16 +85,14 @@
               
             </select>
           </div>
-          <button type="submit" class="btn btn-success">Upload Data</button>
+          <button type="submit" class="btn btn-success" onclick="submitForm()" >Upload Data</button>
         </div>
     </form>
       
     </div>
-
     <!-- END OF CODING Resources -->
 
      <!-- START OF Hackathons SECTION  -->
-
     <div id="hackathon" class="tab-pane fade">
       <h3>Hackathons</h3>
 
@@ -123,7 +124,7 @@
                   <label for="select-tag">Type</label>
                   <select class="form-control" id="select-tag" name="type">
                     <option>Online</option>
-                    <option>In-person</option> 
+                    <option>InPerson</option> 
                   </select>
               </div>
 
@@ -133,27 +134,21 @@
                     <option>Yes</option>
                     <option>No</option>
                     <option>Case by case basis</option>
-                    <option>Partial</option> 
                   </select>
               </div>
 
               <button type="submit" class="btn btn-success">Upload Data</button>
-
         </div>
-
       </form>
-
     </div>
-    
     <!-- END OF Hackathons SECTION -->
 
     <!-- START OF Scholarship -->
-
     <div id="fellowships" class="tab-pane fade">
       
       <h3>Fellowships</h3>
 
-      <form action="#" method="POST">
+      <form action="/admin/dashboard/fellowship" method="POST">
           <div class="form-container">
 
                <div class="form-group">
@@ -201,62 +196,65 @@
       </form>
     
     </div>
-
     <!-- END OF Fellowships -->
 
     <!-- Start of Conference Section -->
 
     <div id="conferences" class="tab-pane fade">
             <h3>Conferences</h3>
-      
-            <div class="form-group">
-                <label for="inputsm">Title</label>
-                <input class="form-control" id="inputsm" name="title" type="text" required="true">
-            </div>
-      
-            <div class="form-group">
-                <label for="inputsm">URL</label>
-                <input class="form-control" id="inputsm" name="url" type="url" required="true">
-            </div>
-      
-            <div class="form-group">
-                <label for="inputsm">Location</label>
-                <input class="form-control" id="inputsm" name="location" type="text" required="true">
-            </div>
-      
-            <div class="form-group">
-                <label for="inputsm">Date</label>
-                <input class="form-control" id="inputsm" name="location" type="date" required="true">
-            </div>
-      
-            <div class="form-group">
-                <label for="select-tag">Field</label>
-                <select class="form-control" id="select-tag" name="field">
-                  <option>JavaScript</option>
-                  <option>Python</option>
-                  <option>Android</option> 
-                  <option>iOS</option>
-                  <option>AI</option>
-                  <option>Business</option>
-                  <option>Android</option>
-                  <option>Web</option>
-                  <option>Technology</option>
-                  <option>Sustainble Development</option>
-                  <option>Others</option>   
-                </select>
-            </div>
-      
-            <div class="form-group">
-                <label for="select-tag">Travel Reimbursment</label>
-                <select class="form-control" id="select-tag" name="ta">
-                  <option>Yes</option>
-                  <option>No</option>
-                  <option>Case by case basis</option>
-                  <option>Partial</option>
-                </select>
-            </div>
-      
-            <button type="submit" class="btn btn-success">Upload Data</button>
+
+            <form action="/admin/dashboard/conference" method="POST">      
+                   
+                <div class="form-group">
+                        <label for="inputsm">Title</label>
+                        <input class="form-control" id="inputsm" name="title" type="text" required="true">
+                </div>
+            
+                <div class="form-group">
+                        <label for="inputsm">URL</label>
+                        <input class="form-control" id="inputsm" name="url" type="url" required="true">
+                </div>
+            
+                <div class="form-group">
+                        <label for="inputsm">Location</label>
+                        <input class="form-control" id="inputsm" name="location" type="text" required="true">
+                </div>
+            
+                <div class="form-group">
+                        <label for="inputsm">Date</label>
+                        <input class="form-control" id="inputsm" name="location" type="date" required="true">
+                </div>
+            
+                <div class="form-group">
+                        <label for="select-tag">Field</label>
+                        <select class="form-control" id="select-tag" name="field">
+                        <option>JavaScript</option>
+                        <option>Python</option>
+                        <option>Android</option> 
+                        <option>iOS</option>
+                        <option>AI</option>
+                        <option>Business</option>
+                        <option>Android</option>
+                        <option>Web</option>
+                        <option>Technology</option>
+                        <option>Sustainble Development</option>
+                        <option>Others</option>   
+                        </select>
+                </div>
+            
+                <div class="form-group">
+                        <label for="select-tag">Travel Reimbursment</label>
+                        <select class="form-control" id="select-tag" name="ta">
+                        <option>Yes</option>
+                        <option>No</option>
+                        <option>Case by case basis</option>
+                        <option>Partial</option>
+                        </select>
+                </div>
+            
+                    <button type="submit" class="btn btn-success">Upload Data</button>
+                </form>
+
     </div>
 
     <!-- End of conference section -->
@@ -348,7 +346,7 @@
 
     <!-- Start of BootCamp    -->
     <div id="bootcamps" class="tab-pane fade">
-        <h3>Startup Programs and BootCamps</h3>
+        <h3>BootCamps</h3>
 
         <div class="form-group">
             <label for="inputsm">Title</label>
@@ -429,15 +427,44 @@
 
     <!-- End of topcharts -->
 
+     <!-- Start of topcharts -->
+     <div id="open-source-programs" class="tab-pane fade">
+     
+        <h3>OS Programs</h3>
+            
+        <div class="form-group">
+                <label for="inputsm">Title</label>
+                <input class="form-control" id="inputsm" name="title" type="text" required="true">
+            </div>
+  
+            <div class="form-group">
+                <label for="inputsm">Link</label>
+                <input class="form-control" id="inputsm" name="url" type="url" required="true">
+            </div>
+  
+            <div class="form-group">
+                <label for="inputsm">Incentives</label>
+                <input class="form-control" id="inputsm" name="incentive" type="text" required="true">
+            </div>
+  
+            <button type="submit" class="btn btn-success">Upload Data</button>    
+      </div>
+  
+      <!-- End of topcharts -->
+
   </div>
 
 <script>
-$(document).ready(function(){
-    $(".nav-tabs a").click(function(){
+    $(document).ready(function(){
+        $(".nav-tabs a").click(function(){
         $(this).tab('show');
+        });
     });
 
-});
+    function submitForm(){
+        var frm = document.getElementsByName('form');
+        frm.reset();
+    }
 
 </script>
 </body>

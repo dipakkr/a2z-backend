@@ -15,8 +15,12 @@ const conferenceSchema = new Schema({
         required:true
     },
     eventDate: {
+        // DATE //
         type: String,
-        required:true
+    },
+    deadline : {
+        // DATE //
+        type : String,
     },
     field : {
         type : String,

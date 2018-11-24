@@ -17,11 +17,19 @@ const HackathonSchema = new Schema({
     date : {
         type: String
     },
+    deadline : {
+        type : String
+    },
     type : {
         type: String,
         required:true
     },
     travelReimbursment : {
+        /*
+        Yes
+        No
+        Case by case basis
+        */
         type:String,
     },
     subscribe : {
@@ -40,5 +48,3 @@ const HackathonSchema = new Schema({
 
 const HackathonModel = mongoose.model('hackathon', HackathonSchema);
 module.exports = HackathonModel;
-
-

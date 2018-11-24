@@ -32,6 +32,15 @@ router.get('/hackathon', (req, res,next)=>{
     });
 });
 
+// GET - /hackathon
+router.get('/hackathon', (req, res,next)=>{
+    Hackathon.find({}).then((docs)=>{
+        res.send(docs);
+    },(e)=>{
+        if(e) return res.status(404).send(e);
+    });
+});
+
 // GET - /fellowship
 router.get('/fellowship', (req, res,next)=>{
     Fellowship.find({}).then((docs)=>{

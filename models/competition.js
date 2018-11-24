@@ -14,6 +14,9 @@ const CompetitonSchema = new Schema({
     date : {
         type: String
     },
+    deadline : {
+        type : String
+    },
     field : {
         type: String,
         required:true
