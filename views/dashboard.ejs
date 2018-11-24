@@ -199,7 +199,6 @@
     <!-- END OF Fellowships -->
 
     <!-- Start of Conference Section -->
-
     <div id="conferences" class="tab-pane fade">
             <h3>Conferences</h3>
 
@@ -252,15 +251,13 @@
                         </select>
                 </div>
             
-                    <button type="submit" class="btn btn-success">Upload Data</button>
-                </form>
+                <button type="submit" class="btn btn-success">Upload Data</button>
+            </form>
 
     </div>
-
     <!-- End of conference section -->
 
     <!-- Start of Commmunity Section -->
-
     <div id="meetup" class="tab-pane fade">
         <h3>Developer Community</h3>
   
@@ -291,57 +288,53 @@
   
         <button type="submit" class="btn btn-success">Upload Data</button>
     </div>
-
     <!-- End of Commmunity Section -->
 
     <!-- Start of Competiton Section -->
-
     <div id="competiton" class="tab-pane fade">
         <h3>Competitons</h3>
 
-        <div class="form-group">
-            <label for="inputsm">Title</label>
-            <input class="form-control" id="inputsm" name="title" type="text" required="true">
-        </div>
+        <form method="POST" action="/admin/dashboard/conference">
 
-        <div class="form-group">
-            <label for="inputsm">URL</label>
-            <input class="form-control" id="inputsm" name="url" type="url" required="true">
-        </div>
+            <div class="form-group">
+                <label for="inputsm">Title</label>
+                <input class="form-control" id="inputsm" name="title" type="text" required="true">
+            </div>
 
-        <div class="form-group">
-                <label for="inputsm">Date</label>
-                <input class="form-control" id="inputsm" name="date" type="date" required="true">
-        </div>
+            <div class="form-group">
+                <label for="inputsm">URL</label>
+                <input class="form-control" id="inputsm" name="url" type="url" required="true">
+            </div>
 
-        <div class="form-group">
-                <label for="select-tag">Field</label>
-                <select class="form-control" id="select-tag" name="field">
-                  <option>Technology</option>
-                  <option>Business</option>
-                  <option>Entrepreneurship</option>
-                  <option>Ideathon</option>
-                  <option>Design</option>
-                  <option>Mechanical</option>
+            <div class="form-group">
+                    <label for="inputsm">Date</label>
+                    <input class="form-control" id="inputsm" name="date" type="date" required="true">
+            </div>
+
+            <div class="form-group">
+                    <label for="select-tag">Field</label>
+                    <select class="form-control" id="select-tag" name="field">
+                    <option>Technology</option>
+                    <option>Business</option>
+                    <option>Entrepreneurship</option>
+                    <option>Ideathon</option>
+                    <option>Design</option>
+                    <option>Mechanical</option>
+                    </select>
+            </div>
+
+            <div class="form-group">
+                <label for="select-tag">Location</label>
+                <select class="form-control" id="select-tag" name="location">
+                <option>Online</option>
+                <option>Onsite</option>
+                <option>Online & Onsite</option>            
                 </select>
-        </div>
-
-        <div class="form-group">
-            <label for="select-tag">Location</label>
-            <select class="form-control" id="select-tag" name="location">
-              <option>Online</option>
-              <option>Onsite</option>
-              <option>Online & Onsite</option>            
-            </select>
-        </div>      
-  
-
-        
-        
-        <button type="submit" class="btn btn-success">Upload Data</button>
-
+            </div>      
+    
+            <button type="submit" class="btn btn-success">Upload Data</button>
+        </form>
     </div>
-
     <!-- End of Competiton Section -->
 
     <!-- Start of BootCamp    -->

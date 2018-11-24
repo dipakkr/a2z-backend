@@ -1,11 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const CodingResources = require('../models/coding');
-const Conference = require('../models/conference');
-const Hackathon = require('../models/hackathon');
-const Fellowship = require('../models/fellowship');
 
-//  GET - /coding
+const CodingResources = require('../models/coding');
+const Hackathon = require('../models/hackathon');
+const Competition = require('../models/competition');
+const Conference = require('../models/conference');
+const Fellowship = require('../models/fellowship');
+const Competition = require('../models/competition');
+const OpenSourcePrograms = require('../models/soc-programs');
+const BootCamps = require('../models/bootcamp');
+const Community = require('../models/meetup');
+const TopChart = require('../models/topcharts');
+
+//  1 - GET - /coding
 router.get('/coding',(req, res, next)=>{
     CodingResources.find({}).then((docs)=>{
         res.send(docs);
@@ -13,8 +20,26 @@ router.get('/coding',(req, res, next)=>{
         if(e) return res.status(404).send(e);
     });
 })
- 
-// GET - /conference
+
+// 2 - GET - /hackathon
+router.get('/hackathon', (req, res,next)=>{
+    Hackathon.find({}).then((docs)=>{
+        res.send(docs);
+    },(e)=>{
+        if(e) return res.status(404).send(e);
+    });
+});
+
+// 3 - GET - /competiton
+router.get('/competition', (req, res, next) =>{
+    Competition.find({}).then((docs)=>{
+        res.send(docs);
+    },(e)=>{
+        if(e) return res.status(404).send(e);
+    });
+});
+
+// 4 - GET - /conference
 router.get('/conference', (req, res,next)=>{
     Conference.find({}).then((docs)=>{
         res.send(docs);
@@ -23,25 +48,7 @@ router.get('/conference', (req, res,next)=>{
     });
 });
 
-// GET - /hackathon
-router.get('/hackathon', (req, res,next)=>{
-    Hackathon.find({}).then((docs)=>{
-        res.send(docs);
-    },(e)=>{
-        if(e) return res.status(404).send(e);
-    });
-});
-
-// GET - /hackathon
-router.get('/hackathon', (req, res,next)=>{
-    Hackathon.find({}).then((docs)=>{
-        res.send(docs);
-    },(e)=>{
-        if(e) return res.status(404).send(e);
-    });
-});
-
-// GET - /fellowship
+// 5 - GET - /fellowship
 router.get('/fellowship', (req, res,next)=>{
     Fellowship.find({}).then((docs)=>{
         res.send(docs);
@@ -50,10 +57,39 @@ router.get('/fellowship', (req, res,next)=>{
     });
 });
 
-
-// GET - /open-source-programs
-router.get('/open-source-programs', (req, res, next)=>{
-    
+// 6 - GET - /fellowship
+router.get('/meetup', (req, res,next)=>{
+    Community.find({}).then((docs)=>{
+        res.send(docs);
+    },(e)=>{
+        if(e) return res.status(404).send(e);
+    });
 });
 
+// 7 - GET - /open-source-programs
+router.get('/opensource', (req, res, next)=>{
+    OpenSourcePrograms.find({}).then((docs)=>{
+        res.send(docs);
+    },(e)=>{
+        if(e) return res.status(404).send(e);
+    });
+});
+
+// 8. GET - /bootcamp
+router.get('/bootcamp', (req, res, next)=>{
+    BootCamps.find({}).then((docs)=>{
+        res.send(docs);
+    },(e)=>{
+        if(e) return res.status(404).send(e);
+    })
+});
+
+//9. GET - /topchart
+router.get('/topcharts',(req, res, next)=>{
+    TopChart.find({}).send((docs)=>{
+        res.send(docs);
+    },(e)=>{
+        if(e) return res.status(404).send(e);
+    })
+})
 module.exports = router;
