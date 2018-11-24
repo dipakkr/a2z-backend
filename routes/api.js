@@ -6,7 +6,6 @@ const Hackathon = require('../models/hackathon');
 const Competition = require('../models/competition');
 const Conference = require('../models/conference');
 const Fellowship = require('../models/fellowship');
-const Competition = require('../models/competition');
 const OpenSourcePrograms = require('../models/soc-programs');
 const BootCamps = require('../models/bootcamp');
 const Community = require('../models/meetup');
@@ -57,6 +56,7 @@ router.get('/fellowship', (req, res,next)=>{
     });
 });
 
+
 // 6 - GET - /fellowship
 router.get('/meetup', (req, res,next)=>{
     Community.find({}).then((docs)=>{
@@ -85,11 +85,17 @@ router.get('/bootcamp', (req, res, next)=>{
 });
 
 //9. GET - /topchart
-router.get('/topcharts',(req, res, next)=>{
-    TopChart.find({}).send((docs)=>{
+router.get('/topcharts',(req, res,next)=>{
+    TopChart.find({}).then((docs)=>{
         res.send(docs);
     },(e)=>{
         if(e) return res.status(404).send(e);
-    })
-})
+    });
+}); 
+
+// 10 .TESTING PURPOSE - /test
+router.get('/testing',(req,res)=>{
+    console.log(req);
+});
+
 module.exports = router;

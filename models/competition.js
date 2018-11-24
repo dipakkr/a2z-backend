@@ -40,6 +40,6 @@ const CompetitonSchema = new Schema({
 })
 
 const CompetitionModel = mongoose.model('competition', CompetitonSchema);
-module.export = CompetitionModel;
+module.exports = CompetitionModel;
 
 
