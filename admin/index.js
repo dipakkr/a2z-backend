@@ -21,7 +21,6 @@ router.post('/a2zhq', (req, res)=>{
     var username = req.body.username;
     var password = req.body.password;
     if(username,password != null && username === 'admin@a2zhq' && password === 'admin'){
-        //Login success
         res.render('dashboard');
     }
 });

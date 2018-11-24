@@ -4,147 +4,95 @@
 - Node.Js
 - MongoDB
 
-## Features
+# List of API route with sample response 
 
- User Should be able to access following resource : 
+### 1. GET - /coding
+```
+{
+    "bookmark": false,
+    "active": true,
+    "_id": "5bf809750775f44603d2d338",
+    "title": "Learn Python | CodeAcademy",
+    "url": "https://www.codecademy.com/learn/learn-python",
+    "diffcultyLevel": "Beginners",
+    "tag": "Python",
+    "__v": 0
+  }
 
-## 1. Coding Resource  [DONE]
-   
-   1. Python
-   2. HTML & CSS
-   3. JavaScript
-   4. Data Structure
-   5. Machine Learning & Deep Learning
-   6. Android Development
-   7. Backend Development
-   8. Frontend Development
+```
 
-   ```
-   SCHEMA 
-   =======
+### 2. GET - /hackathon
 
-   [Make one collection and filter by tags]
+```
+ {
+    "subscribe": false,
+    "active": true,
+    "bookmark": false,
+    "_id": "5bf8f154759da74d382659a0",
+    "title": "InOut",
+    "url": "https://hackinout.co/",
+    "tags": "Regional, InPerson",
+    "location": "India",
+    "travelReimbursment": "Yes",
+    "date": "October",
+    "deadline": "NA"
+  }
 
-   Model Name : coding-resource
+```
 
-   text : 'String' 
-   url : 'String'
-   diffcultyLevel : 'Begineers', 'Moderate', 'Experts'
-   tags : [enums]
-   bookmark  : boolean [DEFAULT - false]
-   active : boolean [DEFAULT - true]
+### 3. GET - /competition
 
+```
+{
 
-   ```
+}
+```
+
+### 4. GET - /conference
+
+```
+{
+
+}
+
+```
+
+### 5. GET - /fellowship
+
+```
+{
+
+}
+```
+
+### 6. GET - /meetup
+
+```
+{
+
+}
+```
+
+### 7. GET -/opensource
+
+```
+{
+
+}
+```
+
+### 8. GET - /bootcamp
+
+```
+{
+
+}
+```
+
+### 9. GET - /topcharts
+
+```
+{
     
-## 2.  Events for Students [TBD]
-
-#### 1. Developer Clubs and Meetups
-
-#### 2. Conferences
-
-    ```
-    SCHEMA 
-    =======
-
-    Model Name : events
-    
-    title : String
-    url : String
-    place : String
-    country : String
-    event date : 'DATE' [String]
-    subscription : boolean [DEFAULT - false]
-    active : [DEFAULT - true]
-
-    ```
-
-## 3. Student Programs 
-    
-#### 1. Fellowship Programs [DONE]
-
-    ```
-    SCHEMA
-    =======
-
-    Model Name - fellowship 
-
-    text : String
-    link : String
-    place : String
-    country : String
-    field : String
-    eligiblity : enum [Bachelors, Masters, PHD]
-    application deadline : DATE 
-    active : boolean  [DEFAULT - true]
-    subscribe : boolean [DEFAULT - false]
-    bookmark : boolean [DEFAULT - false]
-    online : boolean [Online or InPerson], Default - FALSE
-
-    ```
-
-#### 2. Scholarship [DONE]
-
+}
 ```
-SCHEMA
-=======
-
-Model Name - Scholarship
-
-text : String
-url : String
-field : String
-bookmark : boolean
-active : boolean
-subscribe : boolean
-
-```
-
-## 4. Hackathons [DONE]
-
-```
-SCHEMA 
-=======
-
-Model Name - Hackathon
-
-title : String
-domain : String
-url : String
-Type : Enum[Online or InPerson]
-Application Start Date : Date
-Application End Date : Date
-place : String
-Country : String
-TR : Enum[Yes, No, Partial]
-subscribe : boolean
-active : boolean
-bookmark : boolean
-
-```
-
-
-## 5. Competiton
-
-```
-SCHEMA
-=======
-
-Model Name - Competition
- 
-title : String
-Domain : String
-url : String
-Type : Enum[Online or InPerson]
-Application Start Date : Date
-Application End Date : Date
-place : String
-Country : String
-subscribe : boolean
-active : boolean
-bookmark : boolean
-
-```
-
-### Note - The Schema and Section Descibed Above are tentative. Suggestions are Welcome.
-
