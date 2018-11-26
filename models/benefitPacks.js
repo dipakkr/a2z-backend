@@ -1,5 +1,5 @@
 /**
- * Schema for Developer Community
+ * Schema for Benefit Packs
  * Author : Deepak Kumar
  * Date : 26/11/18
  */
