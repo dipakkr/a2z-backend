@@ -424,8 +424,10 @@
      <div id="open-source-programs" class="tab-pane fade">
      
         <h3>OS Programs</h3>
+
+        <form method="POST" action="/admin/dashboard/opensource">
             
-        <div class="form-group">
+           <div class="form-group">
                 <label for="inputsm">Title</label>
                 <input class="form-control" id="inputsm" name="title" type="text" required="true">
             </div>
@@ -437,11 +439,14 @@
   
             <div class="form-group">
                 <label for="inputsm">Incentives</label>
-                <input class="form-control" id="inputsm" name="incentive" type="text" required="true">
+                <input class="form-control" id="inputsm" name="incentives" type="text" required="true">
             </div>
   
-            <button type="submit" class="btn btn-success">Upload Data</button>    
-      </div>
+            <button type="submit" class="btn btn-success">Upload Data</button> 
+        </form>   
+      
+    </div>
+   
   
       <!-- End of topcharts -->
 

@@ -22,11 +22,15 @@ const OpenSourceProgramSchema = new Schema({
         type: Boolean, 
         default :false
     },
+    subscribe : {
+        type : Boolean,
+        default : false
+    },
     active : {
         type : Boolean,
         default : true
     }
 });
 
-const OpenSourceProgramsModel = mongoose.model('soc', OpenSourceProgramSchema);
+const OpenSourceProgramsModel = mongoose.model('opensource', OpenSourceProgramSchema);
 module.exports = OpenSourceProgramsModel;

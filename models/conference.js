@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const conferenceSchema = new Schema({
+const ConferenceSchema = new Schema({
     title: {
         type: String,
         required:true
@@ -44,5 +44,5 @@ const conferenceSchema = new Schema({
     }
 })
 
-const ConferenceModel = mongoose.model('conference', conferenceSchema);
+const ConferenceModel = mongoose.model('conference', ConferenceSchema);
 module.exports = ConferenceModel;

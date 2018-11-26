@@ -1,13 +1,13 @@
 /**
  * Schema for Developer Community
  * Author : Deepak Kumar
- * Date : 11/11/18
+ * Date : 26/11/18
  */
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const MeetupSchema = new Schema({
+const BenefitPackSchema = new Schema({
     title : {
         type: String,
         required:true
@@ -15,13 +15,6 @@ const MeetupSchema = new Schema({
     url :{
         type: String,
         required:true
-    },
-    location :{
-        type: String,
-    },
-    type:{
-        type:String,
-        required : true
     },
     active :{
         type: Boolean,
@@ -33,5 +26,5 @@ const MeetupSchema = new Schema({
     }
 });
 
-const MeetupModel = mongoose.model('meetups', MeetupSchema);
-module.exports = MeetupModel;
+const BenefitPackModel = mongoose.model('benefit', BenefitPackSchema);
+module.exports = BenefitPackModel;

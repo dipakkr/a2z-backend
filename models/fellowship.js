@@ -41,5 +41,5 @@ const FellowshipSchema = new Schema({
     }
 });
 
-const FellowshipModel = mongoose.model('fellowship', FellowshipSchema);
+const FellowshipModel = mongoose.model('fellowships', FellowshipSchema);
 module.exports = FellowshipModel;

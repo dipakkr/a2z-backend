@@ -78,8 +78,18 @@ router.post('/dashboard/:name', (req, res, next) => {
             location
         } = req.body;
     
-        CompetitionModel.create({ title, url, location, date, type, travelReimbursment})
+        ConferenceModel.create({ title, url, location, date, type, travelReimbursment})
         .then((competition) =>res.send(competition))
+        .catch(next);
+    }else if(name === "opensource"){
+        const { 
+            title, 
+            url, 
+            incentives
+        } = req.body;
+    
+        OpenSourceProgramsModel.create({ title, url, incentives})
+        .then((docs) =>res.send(docs))
         .catch(next);
     }
     
