@@ -40,7 +40,7 @@ const HackathonSchema = new Schema({
         type: Boolean,
         default : true
     },
-    bookmark : {
+    bookmarks : {
         type: Boolean,
         default : false
     }

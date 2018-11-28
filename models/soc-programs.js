@@ -18,7 +18,7 @@ const OpenSourceProgramSchema = new Schema({
         type : String,
         required : true
     },
-    bookmark : {
+    bookmarks : {
         type: Boolean, 
         default :false
     },
