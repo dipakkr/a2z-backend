@@ -2,7 +2,7 @@ const express = require ('express');
 const router =express.Router();
 const mongoose =require('mongoose');
 
-const meetupp =require('../../models/meetup');
+const Meetup =require('../../models/meetup');
 
 router.get('/',(req,res,next)=>{
     

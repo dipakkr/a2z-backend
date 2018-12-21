@@ -9,7 +9,6 @@ router.get('/',(req,res,next)=>{
     competitionn.find()
 	.exec()
     .then(doc=> {
-		console.log(doc);
 		if(doc.length >0){
 			res.status(200).json(doc);
 		}
@@ -21,7 +20,6 @@ router.get('/',(req,res,next)=>{
 		
 	})
     .catch(err=> {
-		console.log(err);
 		res.status(502).json({err: err});
 	});
 });
@@ -30,7 +28,6 @@ router.get('/',(req,res,next)=>{
 router.post('/',(req,res,next)=>{
 	
     const competition=new competitionn({
-		_id: new mongoose.Types.ObjectId,
 		title: req.body.title,
 		url : req.body.url,
 		date :req.body.date,
@@ -42,14 +39,12 @@ router.post('/',(req,res,next)=>{
         active : req.body.active
 	});
 	competition.save().then(result =>{
-		console.log(result);
 		res.status(201).json({
 			message:'Handling POST Request to /Coding',
 			createdCoding: result
 		});
 	})
 	.catch(err => {
-		console.log(err);
 		res.status(500).json({
 			error: err
 		});

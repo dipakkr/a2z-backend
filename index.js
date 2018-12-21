@@ -52,16 +52,20 @@ app.get('/test', (req, res)=>{
 });
  
 //Initialise the routes
+
+// Not working
 app.use('/topCharts',topCharts);
-app.use('/benefitPacks',benefitPacks);
-app.use('/bootCamps',bootCamps);
+app.use('/benefitpacks',benefitPacks);
+app.use('/bootcamps',bootCamps);
 app.use('/coding',coding);
+
+// Working routes
+app.use('/socPrograms',socPrograms);
 app.use('/competition',competition);
 app.use('/conference',conference);
 app.use('/fellowship',fellowship);
 app.use('/hackathon',hackathon);
 app.use('/meetup',meetup);
-app.use('/socPrograms',socPrograms);
 
 app.use('/admin', godmode);
 

@@ -2,7 +2,6 @@ const mongoose =require('mongoose');
 
 const hackathonSchema = mongoose.Schema({
     
-    _id: mongoose.Schema.Types.ObjectId,
     
     title : {
         type: String,

@@ -9,7 +9,6 @@ router.get('/',(req,res,next)=>{
     fellowshipp.find()
 	.exec()
     .then(doc=> {
-		console.log(doc);
 		if(doc.length >0){
 			res.status(200).json(doc);
 		}
@@ -21,7 +20,6 @@ router.get('/',(req,res,next)=>{
 		
 	})
     .catch(err=> {
-		console.log(err);
 		res.status(502).json({err: err});
 	});
 });
@@ -30,7 +28,6 @@ router.get('/',(req,res,next)=>{
 router.post('/',(req,res,next)=>{
 	
     const fellowship=new fellowshipp({
-		_id: new mongoose.Types.ObjectId,
 		title: req.body.title,
 		url : req.body.url,
 		location :req.body.location,
@@ -42,14 +39,12 @@ router.post('/',(req,res,next)=>{
         
 	});
 	fellowship.save().then(result =>{
-		console.log(result);
 		res.status(201).json({
 			message:'Handling POST Request to /fellowship',
 			fellowship: result
 		});
 	})
 	.catch(err => {
-		console.log(err);
 		res.status(500).json({
 			error: err
 		});

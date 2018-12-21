@@ -1,9 +1,7 @@
 const mongoose =require('mongoose');
 
 const socProgramsSchema = mongoose.Schema({
-    
-    _id: mongoose.Schema.Types.ObjectId,
-    
+        
     title :{
         type : String, 
         required : true
@@ -34,4 +32,4 @@ const socProgramsSchema = mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('socPrograms',socProgramsSchema);
+module.exports = mongoose.model('opensource',socProgramsSchema);

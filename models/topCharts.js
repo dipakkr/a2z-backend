@@ -1,9 +1,7 @@
 const mongoose =require('mongoose');
 
 const TopChartSchema = mongoose.Schema({
-    
-    _id: mongoose.Schema.Types.ObjectId,
-    
+        
     name : {
         type : String, 
         required : true

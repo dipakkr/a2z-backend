@@ -2,14 +2,13 @@ const express = require ('express');
 const router =express.Router();
 const mongoose =require('mongoose');
 
-const hackathonn =require('../../models/hackathon');
+const Hackathon =require('../../models/hackathon');
 
 router.get('/',(req,res,next)=>{
     
-    hackathonn.find()
+    Hackathon.find()
 	.exec()
     .then(doc=> {
-		console.log(doc);
 		if(doc.length >0){
 			res.status(200).json(doc);
 		}
@@ -21,7 +20,6 @@ router.get('/',(req,res,next)=>{
 		
 	})
     .catch(err=> {
-		console.log(err);
 		res.status(502).json({err: err});
 	});
 });
@@ -29,21 +27,17 @@ router.get('/',(req,res,next)=>{
 
 router.post('/',(req,res,next)=>{
 	
-    const hackathon=new hackathonn({
-		_id: new mongoose.Types.ObjectId,
+    const hackathonItem = new Hackathon({
 		title: req.body.title,
 		url : req.body.url,
 		location :req.body.location,
         date :req.body.date,
         deadline :req.body.deadline,
         type:req.body.type,
-        travelReimbursment: req.body.travelReimbursment,
-        subscribe :req.body.subscribe,
-        active : req.body.active,
-		bookmark :req.body.bookmark
-        
+        travelReimbursment: req.body.travelReimbursment        
 	});
-	hackathon.save().then(result =>{
+
+	hackathonItem.save().then(result =>{
 		console.log(result);
 		res.status(201).json({
 			message:'Handling POST Request to /hackathon',
@@ -58,7 +52,5 @@ router.post('/',(req,res,next)=>{
 	});
 	
 });
-
-
 
 module.exports =router;

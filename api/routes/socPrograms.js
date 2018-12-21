@@ -9,7 +9,6 @@ router.get('/',(req,res,next)=>{
     socProgram.find()
 	.exec()
     .then(doc=> {
-		console.log(doc);
 		if(doc.length >0){
 			res.status(200).json(doc);
 		}
@@ -30,7 +29,6 @@ router.get('/',(req,res,next)=>{
 router.post('/',(req,res,next)=>{
 	
     const socPrograms=new socProgram({
-		_id: new mongoose.Types.ObjectId,
 		title: req.body.title,
 		url : req.body.url,
 		incentives :req.body.incentives,

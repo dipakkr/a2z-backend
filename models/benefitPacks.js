@@ -2,7 +2,6 @@ const mongoose =require('mongoose');
 
 const benefitPacksSchema = mongoose.Schema({
     
-    _id: mongoose.Schema.Types.ObjectId,
     
     title : {
         type: String,
@@ -20,6 +19,7 @@ const benefitPacksSchema = mongoose.Schema({
         type: Boolean,
         default : false
     }
+    
 });
 
 
