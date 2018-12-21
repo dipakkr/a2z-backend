@@ -3,8 +3,19 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const ejs = require('ejs');
 const {mongoose} = require('./config/mongoose');
-const api = require('./routes/api');
-const godmode = require('./admin/index');
+const godmode = require('./api/admin/index');
+
+// routes 
+const topCharts= require ('./api/routes/topCharts');
+const benefitPacks= require ('./api/routes/benefitPacks');
+const bootCamps= require ('./api/routes/bootCamps');
+const coding= require ('./api/routes/coding');
+const competition= require ('./api/routes/competition');
+const conference= require ('./api/routes/conference');
+const fellowship= require ('./api/routes/fellowship');
+const hackathon= require ('./api/routes/hackathon');
+const meetup= require ('./api/routes/meetup');
+const socPrograms= require ('./api/routes/socPrograms');
 
 // Defining port for server
 var port = process.env.PORT || 3001
@@ -17,21 +28,41 @@ app.set('view engine', 'ejs');
 app.use(express.static('./public'));
 
 // parser request of content type  - application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({extended : true}))
+app.use(bodyParser.urlencoded({extended : false}))
 app.use(bodyParser.json())
 app.use(morgan('dev'));
+
+app.use((req,res,next)=>{
+	res.header("Access-Control-Allow-Origin","*"/*'http://frontbench.xyz'*/);
+	res.header(
+		"Access-Control-Allow-Headers",
+		"Origin, X-Requested-With, Content-Type, Accept, Authorization"
+		);
+	if(req.method === 'OPTIONS'){
+		res.header('Access-Control-Allow-Methods','PUT','POST,POST,GET,PATCH,DELETE');
+		return res.status(200).json({});
+	}
+	next();
+});
+
 
 //Test API 
 app.get('/test', (req, res)=>{
     res.json({ "message" : "API is working"});
 });
  
-app.get('/', (req, res)=>{
-    res.json({ "message" : "Welcome to A2Z Resources backend"})
-});
-
 //Initialise the routes
-app.use('/', api);
+app.use('/topCharts',topCharts);
+app.use('/benefitPacks',benefitPacks);
+app.use('/bootCamps',bootCamps);
+app.use('/coding',coding);
+app.use('/competition',competition);
+app.use('/conference',conference);
+app.use('/fellowship',fellowship);
+app.use('/hackathon',hackathon);
+app.use('/meetup',meetup);
+app.use('/socPrograms',socPrograms);
+
 app.use('/admin', godmode);
 
 // start the server

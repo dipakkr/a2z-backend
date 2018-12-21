@@ -1,7 +1,9 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const mongoose =require('mongoose');
 
-const ConferenceSchema = new Schema({
+const conferenceSchema = mongoose.Schema({
+    
+    _id: mongoose.Schema.Types.ObjectId,
+    
     title: {
         type: String,
         required:true
@@ -30,7 +32,7 @@ const ConferenceSchema = new Schema({
         type : String,
         required : true
     },
-    subscribe: {
+    subscription: {
         type: Boolean,
         default : false
     },
@@ -38,11 +40,11 @@ const ConferenceSchema = new Schema({
         type : Boolean,
         default : true
     },
-    bookmarks : {
+    bookmark : {
         type : Boolean,
         default : false
     }
-})
+});
 
-const ConferenceModel = mongoose.model('conference', ConferenceSchema);
-module.exports = ConferenceModel;
+
+module.exports = mongoose.model('conference',conferenceSchema);

@@ -6,11 +6,11 @@
 
 const express = require('express');
 const router = express.Router();
-const CodingResources = require('../models/coding');
-const HackathonModel = require('../models/hackathon');
-const CompetitionModel = require('../models/competition');
-const ConferenceModel = require('../models/conference');
-const OpenSourceProgramsModel = require('../models/soc-programs');
+const CodingResources = require('../../models/coding');
+const HackathonModel = require('../../models/hackathon');
+const CompetitionModel = require('../../models/competition');
+const ConferenceModel = require('../../models/conference');
+const OpenSourceProgramsModel = require('../../models/socPrograms');
 
 //Home Page
 router.get('/a2zhq?',(req, res, next)=>{

@@ -1,7 +1,9 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const mongoose =require('mongoose');
 
-const TopChartSchema = new Schema({
+const TopChartSchema = mongoose.Schema({
+    
+    _id: mongoose.Schema.Types.ObjectId,
+    
     name : {
         type : String, 
         required : true
@@ -33,8 +35,7 @@ const TopChartSchema = new Schema({
         type : Boolean,
         default : true
     }
-
 });
 
-const TopChart = mongoose.model('topChart', TopChartSchema);
-module.exports = TopChart;
+
+module.exports = mongoose.model('topCharts',TopChartSchema);

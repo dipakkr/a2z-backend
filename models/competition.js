@@ -1,8 +1,9 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const mongoose =require('mongoose');
 
-const CompetitonSchema = new Schema({
-
+const competitionSchema = mongoose.Schema({
+    
+    _id: mongoose.Schema.Types.ObjectId,
+    
     title : {
         type: String,
         required:true
@@ -33,13 +34,11 @@ const CompetitonSchema = new Schema({
         type: Boolean,
         default : true
     },
-    bookmarks : {
+    bookmark : {
         type: Boolean,
         default : false
     }
-})
-
-const CompetitionModel = mongoose.model('competition', CompetitonSchema);
-module.exports = CompetitionModel;
+});
 
 
+module.exports = mongoose.model('competition',competitionSchema);

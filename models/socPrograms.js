@@ -1,7 +1,9 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const mongoose =require('mongoose');
 
-const OpenSourceProgramSchema = new Schema({
+const socProgramsSchema = mongoose.Schema({
+    
+    _id: mongoose.Schema.Types.ObjectId,
+    
     title :{
         type : String, 
         required : true
@@ -18,7 +20,7 @@ const OpenSourceProgramSchema = new Schema({
         type : String,
         required : true
     },
-    bookmarks : {
+    bookmark : {
         type: Boolean, 
         default :false
     },
@@ -32,5 +34,4 @@ const OpenSourceProgramSchema = new Schema({
     }
 });
 
-const OpenSourceProgramsModel = mongoose.model('opensource', OpenSourceProgramSchema);
-module.exports = OpenSourceProgramsModel;
+module.exports = mongoose.model('socPrograms',socProgramsSchema);

@@ -1,13 +1,9 @@
-/**
- * Schema for Benefit Packs
- * Author : Deepak Kumar
- * Date : 26/11/18
- */
+const mongoose =require('mongoose');
 
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-
-const BenefitPackSchema = new Schema({
+const benefitPacksSchema = mongoose.Schema({
+    
+    _id: mongoose.Schema.Types.ObjectId,
+    
     title : {
         type: String,
         required:true
@@ -20,11 +16,11 @@ const BenefitPackSchema = new Schema({
         type: Boolean,
         default : true
     },
-    bookmarks :{
+    bookmark :{
         type: Boolean,
         default : false
     }
 });
 
-const BenefitPackModel = mongoose.model('benefit', BenefitPackSchema);
-module.exports = BenefitPackModel;
+
+module.exports = mongoose.model('benefitPacks',benefitPacksSchema);

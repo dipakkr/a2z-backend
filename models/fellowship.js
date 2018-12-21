@@ -1,13 +1,9 @@
-/**
- * Schema for Fellowship Community
- * Author : Deepak Kumar (@dipakkr)
- * Date : 11/11/18
- */
+const mongoose =require('mongoose');
 
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-
-const FellowshipSchema = new Schema({
+const fellowshipSchema = mongoose.Schema({
+    
+    _id: mongoose.Schema.Types.ObjectId,
+    
     title : {
         type: String,
         required:true
@@ -25,7 +21,7 @@ const FellowshipSchema = new Schema({
         required : true
     },
     deadline :{
-        type: Date
+        type: String
     },
     active :{
         type: Boolean,
@@ -35,11 +31,11 @@ const FellowshipSchema = new Schema({
         type: Boolean,
         default : false
     },
-    bookmarks :{
+    bookmark :{
         type: Boolean,
         default : false
     }
 });
 
-const FellowshipModel = mongoose.model('fellowships', FellowshipSchema);
-module.exports = FellowshipModel;
+
+module.exports = mongoose.model('fellowship',fellowshipSchema);

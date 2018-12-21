@@ -1,7 +1,9 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const mongoose =require('mongoose');
 
-const CodingSchema = new Schema({
+const codingSchema = mongoose.Schema({
+    
+    _id: mongoose.Schema.Types.ObjectId,
+    
     title : {
         type : String,
         required:true
@@ -43,5 +45,5 @@ const CodingSchema = new Schema({
     }
 });
 
-const CodingResources = mongoose.model('coding', CodingSchema);
-module.exports = CodingResources;
+
+module.exports = mongoose.model('coding',codingSchema);

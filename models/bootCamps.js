@@ -1,13 +1,9 @@
-/**
- * Schema for Bootcamp 
- * Author : Deepak Kumar (@dipakkr)
- * Date : 11/11/18
- */
+const mongoose =require('mongoose');
 
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-
-const BootcampSchema = new Schema({
+const bootCampsSchema = mongoose.Schema({
+    
+    _id: mongoose.Schema.Types.ObjectId,
+    
     title : {
         type: String,
         required:true
@@ -38,5 +34,5 @@ const BootcampSchema = new Schema({
     }
 });
 
-const BootcampModel = mongoose.model('bootcamp', BootcampSchema);
-module.exports = BootcampModel;
+
+module.exports = mongoose.model('bootCamp',bootCampsSchema);

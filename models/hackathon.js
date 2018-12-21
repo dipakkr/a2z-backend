@@ -1,7 +1,9 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const mongoose =require('mongoose');
 
-const HackathonSchema = new Schema({
+const hackathonSchema = mongoose.Schema({
+    
+    _id: mongoose.Schema.Types.ObjectId,
+    
     title : {
         type: String,
         required:true
@@ -40,11 +42,11 @@ const HackathonSchema = new Schema({
         type: Boolean,
         default : true
     },
-    bookmarks : {
+    bookmark : {
         type: Boolean,
         default : false
     }
-})
+});
 
-const HackathonModel = mongoose.model('hackathon', HackathonSchema);
-module.exports = HackathonModel;
+
+module.exports = mongoose.model('hackathon',hackathonSchema);

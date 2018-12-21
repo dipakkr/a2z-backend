@@ -1,13 +1,9 @@
-/**
- * Schema for Developer Community
- * Author : Deepak Kumar
- * Date : 11/11/18
- */
+const mongoose =require('mongoose');
 
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-
-const MeetupSchema = new Schema({
+const meetupSchema = mongoose.Schema({
+    
+    _id: mongoose.Schema.Types.ObjectId,
+    
     title : {
         type: String,
         required:true
@@ -27,11 +23,10 @@ const MeetupSchema = new Schema({
         type: Boolean,
         default : true
     },
-    bookmarks :{
+    bookmark :{
         type: Boolean,
         default : false
     }
 });
 
-const MeetupModel = mongoose.model('meetups', MeetupSchema);
-module.exports = MeetupModel;
+module.exports = mongoose.model('meetup',meetupSchema);
